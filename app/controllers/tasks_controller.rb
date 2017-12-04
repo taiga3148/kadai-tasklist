@@ -4,17 +4,17 @@ class TasksController < ApplicationController
   end
 
   def show
-    @tasks = Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def new
-    @tasks = Task.new
+    @task = Task.new
   end
 
   def create
-    @tasks = Task.new(task_params)
+    @task = Task.new(task_params)
 
-    if @tasks.save
+    if @task.save
       flash[:success] = 'Task が正常に作成されました'
       redirect_to @task
     else
