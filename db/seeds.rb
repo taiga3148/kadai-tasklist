@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+statuses = ["まだ", '途中', "終わった"]
+
+100.times do |n|
+  Task.create!(content: "hello#{n + 1}", status: statuses.sample)
+end
